@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: elyashevich
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: email
+                  value: "user1@example.com"
+              - column:
+                  name: password
+                  value: "password1"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: email
+                  value: "user2@example.com"
+              - column:
+                  name: password
+                  value: "password2"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: email
+                  value: "user3@example.com"
+              - column:
+                  name: password
+                  value: "password3"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  value: 4
+              - column:
+                  name: email
+                  value: "user4@example.com"
+              - column:
+                  name: password
+                  value: "password4"
