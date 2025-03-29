@@ -2,7 +2,6 @@ package com.elyashevich.user_service.adapter.in;
 
 import com.elyashevich.user_service.adapter.in.dto.UserDto;
 import com.elyashevich.user_service.adapter.in.dto.UserResponseDto;
-import com.elyashevich.user_service.adapter.out.persistence.UserEntity;
 import com.elyashevich.user_service.application.domain.model.User;
 import org.springframework.stereotype.Component;
 

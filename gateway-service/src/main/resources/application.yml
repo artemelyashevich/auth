@@ -1,5 +1,35 @@
 spring:
   application:
     name: gateway-service
-  config:
-    import: optional:configserver:http://localhost:8888
+  cloud:
+    gateway:
+      globalcors:
+        enabled: true
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      discovery:
+        locator:
+          lower-case-service-id: true
+          enabled: true
+      routes:
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/api/v1/users/**
+      default-filters:
+        - name: Retry
+          args:
+            methods: GET,POST,PUT,DELETE,OPTIONS
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8222
