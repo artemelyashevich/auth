@@ -5,6 +5,8 @@ import com.elyashevich.user_service.adapter.in.dto.UserResponseDto;
 import com.elyashevich.user_service.application.domain.model.User;
 import org.springframework.stereotype.Component;
 
+import java.util.Collections;
+
 @Component
 public class UserDtoMapper {
 
@@ -12,11 +14,12 @@ public class UserDtoMapper {
         return new User(
             dto.id(),
             dto.email(),
-            dto.password()
+            dto.password(),
+            Collections.emptyList()
         );
     }
 
     public UserResponseDto toResponseDto(User user) {
-        return new UserResponseDto(user.id(), user.email());
+        return new UserResponseDto(user.id(), user.email(), user.roles());
     }
 }
