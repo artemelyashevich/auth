@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class UserEntityMapper {
 
     public User toUser(UserEntity userEntity){
-        return new User(userEntity.getId(), userEntity.getEmail(), userEntity.getPassword());
+        return new User(userEntity.getId(), userEntity.getEmail(), userEntity.getPassword(), userEntity.getRoles());
     }
 
     public UserEntity toUserEntity(User user){

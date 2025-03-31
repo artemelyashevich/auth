@@ -12,16 +12,12 @@ import lombok.experimental.UtilityClass;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
-
-import static com.fasterxml.jackson.databind.type.LogicalType.DateTime;
 
 @UtilityClass
 public class JwtUtil {
 
-    @Value("${application.security.secret}")
-    private String secret;
+    private static final String secret = "984hg493gh0439rthr0429uruj2309yh937gc763fe87t3f89723gf";
 
     public static String generateJwtToken(User user, Long tokenLifeTime) {
         var issuedAt = new Date();
